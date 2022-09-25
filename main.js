@@ -46,7 +46,7 @@ document.writeln(
     jumlahSoal +
     "</b> soal dengan benar!</p>"
 );
-var text = "Selamat " + user + "Telah Menyelesaikan Quiz";
+var text = "Selamat " + user + " Telah Menyelesaikan Quiz";
 var word = text.split("");
 var i = 0;
 var interval = setInterval(writeText, 100);
