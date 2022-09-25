@@ -1,59 +1,60 @@
-var soal;
-var jawaban;
-var jumlahSoal = 0;
-var benar = 0;
-var salah = 0;
-
-var pesan;
+let question;
+let answer;
+let questionQuantity = 0;
+let correct = 0;
+let wrong = 0;
+let message;
 
 user = window.prompt("Masukkan Nama Anda ");
 
-while (jumlahSoal < 3) {
-  if (jumlahSoal == 0) {
-    soal = window.prompt("Tahun Berapa Indonesia Merdeka ?");
-    soal = soal.toLowerCase();
-    jawaban = "1945";
+while (questionQuantity < 3) {
+  if (questionQuantity == 0) {
+    question = window.prompt("Tahun Berapa Indonesia Merdeka ?");
+    question = question.toLowerCase();
+    answer = "1945";
   }
 
-  if (jumlahSoal == 1) {
-    soal = window.prompt(pesan + "\n\n" + "2 + 3 = ?");
-    jawaban = "5";
+  if (questionQuantity == 1) {
+    question = window.prompt(message + "\n\n" + "2 + 3 = ?");
+    answer = "5";
   }
 
-  if (jumlahSoal == 2) {
-    soal = window.prompt(
-      pesan + "\n\n" + "Pelukis Penyebab Perang Dunia Ke 2?"
+  if (questionQuantity == 2) {
+    question = window.prompt(
+      message + "\n\n" + "Pelukis Penyebab Perang Dunia Ke 2?"
     );
-    soal = soal.toLowerCase();
-    jawaban = "hitler";
+    question = question.toLowerCase();
+    answer = "hitler";
   }
 
-  if (soal == jawaban) {
-    benar += 1;
-    pesan = "Jawaban Anda Benar";
+  if (question == answer) {
+    correct += 1;
+    message = "Jawaban Anda Benar";
   } else {
-    salah += 1;
-    pesan = "Jawaban Anda Salah";
+    wrong += 1;
+    message = "Jawaban Anda Salah";
   }
-  jumlahSoal += 1;
+  questionQuantity += 1;
 }
 
 document.writeln(" <h1></h1><hr />");
 document.writeln(
   "<p>Anda Menjawab : <b>" +
-    benar +
+    correct +
     "</b> dari <b>" +
-    jumlahSoal +
-    "</b> soal dengan benar!</p>"
+    questionQuantity +
+    "</b> question dengan benar!</p>"
 );
-var text = "Selamat " + user + " Telah Menyelesaikan Quiz";
-var word = text.split("");
-var i = 0;
-var interval = setInterval(writeText, 100);
+
+let text = "Selamat " + user + " Telah Menyelesaikan Quiz";
+let outputCharacters = text.split("");
+let i = 0;
+let interval = setInterval(writeText, 100);
+
 function writeText() {
-  var congrats = document.getElementsByTagName("h1")[0];
-  if (i < word.length) {
-    congrats.innerHTML += word[i];
+  let congratsElement = document.getElementsByTagName("h1")[0];
+  if (i < outputCharacters.length) {
+    congratsElement.innerHTML += outputCharacters[i];
     i++;
   }
 }
